@@ -112,3 +112,18 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const div = document.createElement('div')
+div.classList.add('article');
+
+const h2 = document.createElement('h2');
+const p1 = document.createElement('p');
+const p2 = document.createElement('p');
+const p3 = document.createElement('p');
+
+
+/** example of loop for less coding */
+// panelData.forEach((panelObj) => {
+//   const panelComponent = panelComponentCreator(panelObj.title, panelObj.content);
+//   console.log(panelComponent)
+// })
