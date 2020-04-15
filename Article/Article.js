@@ -132,12 +132,14 @@ const createArticle = (article)=>{
   articleH2.classList.add('h2')
   articleOpen.classList.add('expandButton');
   articleClose.classList.add('expandButton');
+
 //ARROWS FOR TOGGLE
 // const open = ''; 
 // articleOpen.textContent = open;
 // const close = '';
 // articleClose.textContent = close;
 //ADDING THE CONTENT TO THE DIV
+
   articleH2.textContent = article.title;
   articleDate.textContent = article.date;
   p1.textContent = article.firstParagraph;
