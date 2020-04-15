@@ -113,16 +113,56 @@ const data = [
 
 */
 
-const div = document.createElement('div')
-div.classList.add('article');
 
-const h2 = document.createElement('h2');
-const p1 = document.createElement('p');
-const p2 = document.createElement('p');
-const p3 = document.createElement('p');
+// CREATE A DIV AND ITS ELEMENTS
+const createArticle = (article)=>{
+  const articleDiv = document.createElement('div');
+  const articleH2 = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const articleOpen = document.createElement('span');
+  const articleClose = document.createElement('span');
+//APPEND ALL NEW ELEMENTS TO THE MAIN DIV
+  articleDiv.append(articleH2, articleDate, p1, p2, p3, articleOpen, articleClose);
+//ADD CLASS LISTS TO NEW ELEMENTS
+  articleDiv.classList.add('article');
+  articleDate.classList.add('date');
+  articleH2.classList.add('h2')
+  articleOpen.classList.add('expandButton');
+  articleClose.classList.add('expandButton');
+//ARROWS FOR TOGGLE
+// const open = ''; 
+// articleOpen.textContent = open;
+// const close = '';
+// articleClose.textContent = close;
+//ADDING THE CONTENT TO THE DIV
+  articleH2.textContent = article.title;
+  articleDate.textContent = article.date;
+  p1.textContent = article.firstParagraph;
+  p2.textContent = article.secondParagraph;
+  p3.textContent = article.thirdParagraph;
+//OPEN AND CLOSE DIV
+  articleOpen.addEventListener('click', ()=>{
+    articleDiv.classList.toggle('article-open')
+  })
+  articleClose.addEventListener('click', ()=>{
+    articleDiv.classList.toggle('article-open')
+  })
 
+  return articleDiv
 
-/** example of loop for less coding */
+  //END OF FUNCTION
+}
+
+//ARRAY LOOP
+data.forEach((articleData) => {const articlesDiv = document.querySelector('.articles');
+  articlesDiv.appendChild(createArticle(articleData))
+})
+
+/** example of loop for less coding for personal use*/
+
 // panelData.forEach((panelObj) => {
 //   const panelComponent = panelComponentCreator(panelObj.title, panelObj.content);
 //   console.log(panelComponent)
